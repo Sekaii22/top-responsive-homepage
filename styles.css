@@ -16,12 +16,143 @@
     font-display: swap;
 }
 
-.roboto-text {
-    font-family: "Roboto", sans-serif;
-    background-color: plum;
+/* breakpoint at 500px for mobile, 1000px for tablet */
+
+:root {
+    --secondary-color: #0090b3;
 }
 
-.playfair-text {
-    font-family: "Playfair-Display", sans-serif;
-    background-color: cornflowerblue;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #222;
 }
+
+h1, h2, h3 {
+    font-family: "Playfair-Display", 'Times New Roman', serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222;
+}
+
+.content {
+    max-width: 1100px;
+    min-height: 100vh;
+    background-color: white;
+    padding: 30px 50px;
+
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;     /* explicit stacking context */
+}
+
+.diagonal-deco {
+    background-color: var(--secondary-color);
+    width: 1200px;
+    height: 480px;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: left bottom;
+    transform: rotate(-15deg);
+    z-index: -1;
+}
+
+header {
+    min-height: 400px;
+    display: flex;
+}
+
+.floated-left {
+    /* float: left; */
+    max-width: 380px;
+    position: relative;
+}
+
+.self-portrait-head {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.9);
+}
+
+.name-heading {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    color: white;
+}
+
+.self-desc {
+    margin: 25px 0;
+    padding: 0 12px 70px 20px;
+    background-color: white;
+    position: relative;
+}
+
+.self-desc > h2 {
+    margin: 16px 0;
+}
+
+.self-desc > p {
+    line-height: 1.5;
+}
+
+.drop-shadow {
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.4);
+}
+
+.small-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.medium-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.large-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.socials-icon-group {
+    display: flex;
+    gap: 15px;
+    
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+}
+
