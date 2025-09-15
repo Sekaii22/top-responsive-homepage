@@ -16,10 +16,11 @@
     font-display: swap;
 }
 
-/* breakpoint at 500px for mobile, 1000px for tablet */
+/* breakpoint at 600px for mobile, 1000px for tablet */
 
 :root {
     --secondary-color: #0090b3;
+    --min-header-height: 350px;
 }
 
 * {
@@ -72,9 +73,8 @@ body {
 /* header */
 
 header {
-    min-height: 400px;
-    display: flex;
-    margin: 30px 50px 80px;
+    min-height: var(--min-header-height);
+    margin: 80px 50px 80px;
     
     isolation: isolate;     /* explicit stacking context */
 }
@@ -92,41 +92,48 @@ header {
     z-index: -1;
 }
 
+.self-desc {
+    min-height: var(--min-header-height);
+    background-color: white;
+    position: relative;
+}
+
 .floated-left {
-    /* float: left; */
-    max-width: 380px;
+    float: left;
+    /* margins calc so that text on right wrap properly after image is scaled */
+    margin-right: calc((0.2 * 320px) + 25px);
+    margin-bottom: calc(0.1 * var(--min-header-height));
     position: relative;
 }
 
 .floated-left > img {
-    width: 100%;
-    height: 100%;
+    /* static img size, adjust with media query instead */
+    width: 320px;
+    height: var(--min-header-height);
     object-fit: cover;
     object-position: center;
     filter: brightness(0.9);
+
+    transform-origin: left center;
+    transform: scale(1.2);
 }
 
 .name-heading {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    /* pos calc so that name text takes the correct size after image is scaled */
+    bottom: calc(-0.1 * var(--min-header-height));
+    right: calc(-0.2 * 320px);
     left: 0;
     text-align: center;
     color: white;
 }
 
-.self-desc {
-    margin: 25px 0;
-    padding: 0 12px 70px 20px;
-    background-color: white;
-    position: relative;
-}
-
 .self-desc > h2 {
-    margin: 16px 0;
+    padding: 16px 20px;
 }
 
 .self-desc > p {
+    padding: 0 20px 70px;
     line-height: 1.5;
 }
 
@@ -246,7 +253,7 @@ footer h2, footer p {
 
 .contact-me > h2,
 .contact-me > div {
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .footer-icon-group {
