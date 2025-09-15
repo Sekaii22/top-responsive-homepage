@@ -56,8 +56,7 @@ a {
 
 body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     background-color: #222;
 }
 
@@ -68,10 +67,17 @@ body {
 
     overflow: hidden;
     position: relative;
-    isolation: isolate;     /* explicit stacking context */
 }
 
 /* header */
+
+header {
+    min-height: 400px;
+    display: flex;
+    margin: 30px 50px 80px;
+    
+    isolation: isolate;     /* explicit stacking context */
+}
 
 .diagonal-deco {
     background-color: var(--secondary-color);
@@ -84,12 +90,6 @@ body {
     transform-origin: left bottom;
     transform: rotate(-15deg);
     z-index: -1;
-}
-
-header {
-    min-height: 400px;
-    display: flex;
-    margin: 30px 50px 80px;
 }
 
 .floated-left {
@@ -259,6 +259,6 @@ footer h2, footer p {
     gap: 8px;
 }
 
-.contact-details img {
+.invert-color {
     filter: invert(1);
 }
