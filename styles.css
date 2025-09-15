@@ -269,3 +269,54 @@ footer h2, footer p {
 .invert-color {
     filter: invert(1);
 }
+
+/* media queries */
+
+@media (max-width: 1000px) {
+    /* header */
+
+    header {
+        margin-top: 120px;
+        margin-bottom: 60px;
+    }
+
+    .floated-left {
+        margin: unset;
+        /* margins calc so that text on right wrap properly after image is translated */
+        margin-bottom: -90px;   
+    }
+
+    .floated-left > img {
+        /* (no change) width: 320px, height: var(--min-header-height) */
+        transform: none;
+        transform-origin: unset;
+        transform: translate(-25px, -90px);
+    }
+
+    .name-heading {
+        top: -70px;
+        right: 25px;
+        left: -25px;
+        bottom: unset;
+        transform: translateX(80%);
+    }
+
+    .self-desc > h2 {
+        padding-top: 60px;
+        text-align: center;
+    }
+
+    .self-desc > p {
+        padding-bottom: 50px;
+    }
+
+    header .socials-icon-group {
+        display: none;
+    }
+
+    /* footer */
+    footer {
+        margin-top: 200px;
+        align-items: center;
+    }
+}
