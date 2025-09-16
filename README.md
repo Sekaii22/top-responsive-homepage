@@ -12,3 +12,6 @@ A responsive homepage HTML&CSS assignment from The Odin Project. Create a respon
 
 ### Mobile:
 <img loading="lazy" width="400px" src="./assets/designs/portfolio mobile.png" alt="todolist" /> 
+
+## Attribution
+Photos used are by Marta Klement from Pexels.
