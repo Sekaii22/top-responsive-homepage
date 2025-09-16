@@ -252,6 +252,7 @@ footer h2, footer p {
 .floated-right {
     flex: 1;
     height: 350px;
+    min-width: 180px;
 }
 
 .floated-right > img {
